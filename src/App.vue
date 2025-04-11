@@ -46,7 +46,15 @@ const random = () => {
 </template>
 
 <style scoped>
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  max-width: 90vw;
+}
+
 .image-container {
+  max-width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -58,6 +66,7 @@ const random = () => {
   & img {
     inset: 0;
     width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
