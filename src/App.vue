@@ -8,15 +8,21 @@ const boys = ref([
   { name: "tomas", opacity: 0.2 },
   { name: "tumi", opacity: 0.2 },
 ]);
+
+const random = () => {
+  boys.value.forEach((boy) => (boy.opacity = Math.random().toFixed(3)));
+};
 </script>
 
 <template>
+  <h1>Create your own samehead</h1>
+
   <div class="image-container">
     <img
       v-for="(boy, i) in boys"
       :key="boy"
       :src="`/${boy.name}_liggur_cropped.png`"
-      :style="`opacity: ${(Number(boy.opacity) + (5 - i) * 0.01).toFixed(3)}`"
+      :style="`opacity: ${(Number(boy.opacity) * 0.1 * (10 - i * 1.5)).toFixed(3)}`"
     />
   </div>
 
@@ -35,6 +41,8 @@ const boys = ref([
       />
     </template>
   </div>
+
+  <button @click="random">Random</button>
 </template>
 
 <style scoped>
@@ -45,6 +53,7 @@ const boys = ref([
   position: relative;
   width: 32rem;
   aspect-ratio: 1;
+  margin: 0 auto;
 
   & img {
     inset: 0;
