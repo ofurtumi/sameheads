@@ -64,6 +64,7 @@ h1 {
   margin: 0 auto;
 
   & img {
+z-index: 50;
     inset: 0;
     width: 100%;
     max-width: 100%;
